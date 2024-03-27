@@ -10,10 +10,40 @@
             "request": "launch",
             "module": "uvicorn",
             "args": [
-                "insurance_model:app",
+                "app:app",
                 "--reload"
             ],
             "jinja": true
+        },
+        {
+            "name": "Docker: Python - Fastapi",
+            "type": "docker",
+            "request": "launch",
+            "preLaunchTask": "docker-run: debug",
+            "python": {
+                "pathMappings": [
+                    {
+                        "localRoot": "${workspaceFolder}",
+                        "remoteRoot": "/app"
+                    }
+                ],
+                "projectType": "fastapi"
+            }
+        },
+        {
+            "name": "Docker: Python - General",
+            "type": "docker",
+            "request": "launch",
+            "preLaunchTask": "docker-run: debug",
+            "python": {
+                "pathMappings": [
+                    {
+                        "localRoot": "${workspaceFolder}",
+                        "remoteRoot": "/app"
+                    }
+                ],
+                "projectType": "general"
+            }
         }
     ]
 }

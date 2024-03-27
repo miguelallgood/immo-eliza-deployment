@@ -12,11 +12,31 @@ class Item(BaseModel):
     Latitude: float
 
 def predict(item: Item) -> Optional[float]:
-    model = joblib.load('api/new_best_model.pkl')  # Load your trained model
-    scaler = joblib.load('api/new_input_scaler.pkl')  # Load your stored scaler
+    # Load your trained model
+    model = joblib.load('api/new_best_model.pkl')
+
+    # Load your stored scaler
+    scaler = joblib.load('api/new_input_scaler.pkl')
+
+    # Define feature names
+    feature_names = ['number_rooms', 'living_area', 'garden_area', 'number_facades', 'Longitude', 'Latitude']
+
+    # Prepare input data
     input_data = [[item.number_rooms, item.living_area, item.garden_area, item.number_facades, item.Longitude, item.Latitude]]
+
+    # Transform input data
     input_data_scaled = scaler.transform(input_data)
+
+    # Set feature names on the model
+    model.feature_names = feature_names
+
+    # Make prediction
     prediction_scaled = model.predict(input_data_scaled)
-    price_scaler = joblib.load('api/new_target_scaler.pkl')  # Load the scaler used for 'price' during training
+
+    # Load the scaler used for 'price' during training
+    price_scaler = joblib.load('api/new_target_scaler.pkl')
+
+    # Inverse transform prediction
     prediction = price_scaler.inverse_transform(prediction_scaled.reshape(-1, 1))
+
     return prediction[0][0] if prediction else None
