@@ -32,7 +32,7 @@ item = Item(
 
 if st.button('Predict'):
     # Make a POST request to your FastAPI backend
-    response = requests.post('http://localhost:8000/predict/', json=item.dict())
+    response = requests.post('https://immo-eliza-deployment-h5ai.onrender.com/predict', json=item.dict())
 
     if response.status_code == 200:
         prediction = response.json()['prediction']
