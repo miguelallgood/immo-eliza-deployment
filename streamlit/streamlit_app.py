@@ -55,7 +55,7 @@ item = Item(
     Latitude=Latitude
 )
 
-if st.button('Predict'):
+if st.button('Predict price'):
     # Make a POST request to your FastAPI backend
     response = requests.post('https://immo-eliza-deployment-h5ai.onrender.com/predict', json=item.dict())
 

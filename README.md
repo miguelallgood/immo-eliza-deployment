@@ -18,7 +18,7 @@ This is a Streamlit web application for predicting apartment prices based on var
 
 1. Run the Streamlit app: `streamlit run streamlit_app.py`
 2. Enter the full address and click `"Get Latitude and Longitude"` to retrieve coordinates.
-3. Enter the desired features for price prediction and click `"Predict Price"` to get the predicted price.
+3. Enter the desired features for price prediction and click `"Predict price"` to get the predicted price.
 
 ## Dependencies
 
@@ -29,7 +29,7 @@ This is a Streamlit web application for predicting apartment prices based on var
 
 ## Credits
 
-This project was created by Miguel Bueno [https://github.com/your_username]
+This project was created by Miguel Bueno [https://github.com/miguelallgood]
 
 ## License
 
