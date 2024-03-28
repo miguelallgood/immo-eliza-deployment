@@ -2,27 +2,24 @@ import os
 import sys
 import streamlit as st
 import requests
-import logging
 
 # Add parent directory of predict.py to Python path
-predict_module_path = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-sys.path.append(predict_module_path)
+current_dir = os.path.dirname(os.path.realpath(__file__))
+parent_dir = os.path.abspath(os.path.join(current_dir, os.pardir))
+sys.path.append(parent_dir)
 
+# Now you can import predict module
 from predict import Item
 
-# Configure logging
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
-
-st.title('House Price Prediction')
+st.title('Apartment for sale')
 
 st.write('Enter the features below:')
-number_rooms = st.number_input('Number of Rooms')
-living_area = st.number_input('Living Area')
-garden_area = st.number_input('Garden Area')
-number_facades = st.number_input('Number of Facades')
-Longitude = st.number_input('Longitude')
-Latitude = st.number_input('Latitude')
+number_rooms = st.number_input('Number of Rooms', min_value=0)
+living_area = st.number_input('Living Area (m²)', step=20)
+garden_area = st.number_input('Garden Area (m²)', step=10)
+number_facades = st.number_input('Number of Facades', min_value=0)
+Longitude = st.number_input('Longitude', format="%.4f")
+Latitude = st.number_input('Latitude', format="%.4f")
 
 item = Item(
     number_rooms=number_rooms,
@@ -39,9 +36,10 @@ if st.button('Predict'):
 
     if response.status_code == 200:
         prediction = response.json()['prediction']
-        formatted_prediction = "{:,.2f} €".format(prediction)  # Format prediction with comma and 2 decimals
-        st.success(f'Prediction: {formatted_prediction}')
-        logger.info('Prediction successful')
+        # Format the prediction value with 2 decimals and euro sign
+        # formatted_prediction = f'{prediction:.2f} €'
+        # Add comma formatting
+        formatted_prediction_with_commas = "{:,.2f}".format(prediction) + " €"
+        st.success(f'Prediction: {formatted_prediction_with_commas}')
     else:
         st.error('Prediction failed. Please try again.')
-        logger.error('Prediction failed')

@@ -9,7 +9,7 @@ class Item(BaseModel):
     garden_area: float
     number_facades: float
     Longitude: float
-    Latitude: float
+    Latitude: float    
 
 def predict(item: Item) -> Optional[float]:
     # Load your trained model
