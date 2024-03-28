@@ -1,3 +1,28 @@
+"""Predicts the price of an apartment for sale based on user input features.
+
+This script allows users to input various features of an apartment (such as number of rooms,
+living area, garden area, etc.) and predicts the price of the apartment using a FastAPI backend.
+
+Dependencies:
+    - os
+    - sys
+    - streamlit
+    - requests
+    - predict.Item (imported from the predict module)
+
+Usage:
+    Run the script and input the required features of the apartment. Click the 'Predict' button
+    to see the predicted price.
+
+Returns:
+    The predicted price of the apartment.
+
+Note:
+    Ensure that the predict module containing the Item class is available in the parent directory
+    for importing.
+
+"""
+
 import os
 import sys
 import streamlit as st
