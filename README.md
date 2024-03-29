@@ -1,4 +1,4 @@
-# House Price Prediction App
+# Apartment Price Prediction App
 
 This is a Streamlit web application for predicting apartment prices based on various features such as number of rooms, living area, garden area, and number of facades. It uses a FastAPI backend for prediction and Google Maps Geocoding API to retrieve latitude and longitude coordinates based on the provided address.
 
@@ -10,7 +10,7 @@ This is a Streamlit web application for predicting apartment prices based on var
 
 ## Usage
 
-1. Go to the Website (https://immo-eliza-deployment-mikegood.streamlit.app/)
+1. Go to the Website (https://immo-eliza-deployment-yeks2ppzpt4epjtwsrqsz4.streamlit.app/)
 2. Enter the desired features for price prediction and click `"Predict price"` to get the predicted price.
 
 ## Dependencies
