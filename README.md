@@ -8,14 +8,9 @@ This is a Streamlit web application for predicting apartment prices based on var
 - Input features such as number of rooms, living area, garden area, and number of facades.
 - Predict the price of the house based on the provided features.
 
-## Installation
-
-1. Clone the repository: `git clone https://github.com/miguelallgood/immo-eliza-deployment.git`
-2. Install dependencies: `pip install -r requirements.txt`
-
 ## Usage
 
-1. Run the Streamlit app: `streamlit run streamlit_app.py`
+1. Go to the Website (https://immo-eliza-deployment-mikegood.streamlit.app/)
 2. Enter the desired features for price prediction and click `"Predict price"` to get the predicted price.
 
 ## Dependencies
