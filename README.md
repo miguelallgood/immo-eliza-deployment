@@ -12,19 +12,16 @@ This is a Streamlit web application for predicting apartment prices based on var
 
 1. Clone the repository: `git clone https://github.com/miguelallgood/immo-eliza-deployment.git`
 2. Install dependencies: `pip install -r requirements.txt`
-3. Obtain a Google Maps API key and replace `'YOUR_API_KEY'` with your actual API key in the `get_coordinates()` function in `streamlit_app.py`.
 
 ## Usage
 
 1. Run the Streamlit app: `streamlit run streamlit_app.py`
-2. Enter the full address and click `"Get Latitude and Longitude"` to retrieve coordinates.
-3. Enter the desired features for price prediction and click `"Predict price"` to get the predicted price.
+2. Enter the desired features for price prediction and click `"Predict price"` to get the predicted price.
 
 ## Dependencies
 
 - Streamlit
 - Requests
-- Google Maps Python Client
 - FastAPI
 
 ## Credits
