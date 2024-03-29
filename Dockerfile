@@ -21,4 +21,4 @@ RUN adduser -u 5678 --disabled-password --gecos "" appuser && chown -R appuser /
 USER appuser
 
 # Command to run the Streamlit app
-CMD ["streamlit", "run", "streamlit.py"]
+CMD ["streamlit", "run", ".\streamlit\streamlit.py"]
